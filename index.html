@@ -1,0 +1,114 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Recargas Free Fire</title>
+  <style>
+    body {
+      font-family: Arial, sans-serif;
+      background: #111;
+      color: #fff;
+      margin: 0;
+      padding: 0;
+    }
+
+    header {
+      background-color: #f39c12;
+      padding: 20px;
+      text-align: center;
+    }
+
+    header h1 {
+      margin: 0;
+      font-size: 2em;
+    }
+
+    .container {
+      max-width: 600px;
+      margin: auto;
+      padding: 20px;
+    }
+
+    label {
+      display: block;
+      margin: 10px 0 5px;
+    }
+
+    input, select {
+      width: 100%;
+      padding: 10px;
+      border-radius: 5px;
+      border: none;
+      margin-bottom: 15px;
+    }
+
+    button {
+      width: 100%;
+      padding: 15px;
+      background-color: #f39c12;
+      color: #fff;
+      border: none;
+      border-radius: 5px;
+      font-size: 1em;
+      cursor: pointer;
+    }
+
+    button:hover {
+      background-color: #e67e22;
+    }
+  </style>
+</head>
+<body>
+
+<header>
+  <h1>Recargas Free Fire</h1>
+  <p>Recarga diamantes al mejor precio con bono incluido</p>
+</header>
+
+<div class="container">
+  <form id="recargaForm">
+    <label for="playerID">ID de Jugador:</label>
+    <input type="text" id="playerID" placeholder="Ej: 123456789" required>
+
+    <label for="paquete">Selecciona paquete de diamantes:</label>
+    <select id="paquete" required>
+      <option value="">-- Selecciona --</option>
+      <option value="100+10 = S/7">100 + 10 Diamantes = S/7</option>
+      <option value="310+31 = S/15">310 + 31 Diamantes = S/15</option>
+      <option value="520+52 = S/20">520 + 52 Diamantes = S/20</option>
+      <option value="1060+106 = S/38">1060 + 106 Diamantes = S/38</option>
+      <option value="2180+218 = S/70">2180 + 218 Diamantes = S/70</option>
+      <option value="5600+560 = S/170">5600 + 560 Diamantes = S/170</option>
+    </select>
+
+    <label for="pago">Método de pago:</label>
+    <select id="pago" required>
+      <option value="">-- Selecciona --</option>
+      <option value="Yape">Yape</option>
+      <option value="Plin">Plin</option>
+      <option value="Transferencia">Transferencia</option>
+    </select>
+
+    <button type="submit">Hacer pedido por WhatsApp</button>
+  </form>
+</div>
+
+<script>
+  document.getElementById("recargaForm").addEventListener("submit", function(e) {
+    e.preventDefault();
+
+    const playerID = document.getElementById("playerID").value;
+    const paquete = document.getElementById("paquete").value;
+    const pago = document.getElementById("pago").value;
+
+    const mensaje = `Hola, quiero hacer una recarga de Free Fire:\n\n🆔 ID del jugador: ${playerID}\n💎 Paquete: ${paquete}\n💰 Pago con: ${pago}`;
+
+    const numero = "51925275675"; // Tu número sin "+"
+    const url = `https://wa.me/${numero}?text=${encodeURIComponent(mensaje)}`;
+    window.open(url, '_blank');
+  });
+</script>
+
+</body>
+</html>
